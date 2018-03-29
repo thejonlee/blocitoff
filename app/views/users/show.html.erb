@@ -1,6 +1,7 @@
-<!-- <div class="pull-left user-info">
-    <h1> Email: <%= @user.email %> </h1>
-</div> -->
+<h1><%= current_user.email %>'s To-Dos</h1>
+<!-- <h3>Your Very Own To-Do List</h3> -->
 
-<h1><%= current_user.email %>'s Profile</h1>
-<h3>Your Very Own To-Do List</h3>
+<div class="col-md-8">
+  <%= render partial: 'items/form', locals: { item: @item } %>
+  <%= render partial: 'items/item', locals: { item: @item } %>
+</div>

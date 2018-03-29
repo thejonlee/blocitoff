@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 
-  resources :users, only: [:show]
+  get 'items/create'
+
+  resources :users do
+    resources :items, only: [:create]
+  end
 
   root 'users#show'
 
