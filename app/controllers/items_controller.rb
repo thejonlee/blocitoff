@@ -19,10 +19,30 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Item saved."
-      redirect_to (current_user)
+      # redirect_to (current_user)
     else
-      flash[:error] = "There was an error. Please try again."
-      render :new
+      flash[:error] = "Error saving item. Please try again."
+      # render :new
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = "Item completed!"
+    else
+      flash[:alert] = "Item couldn't be deleted. Try again."
+    end
+    
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

@@ -18,13 +18,14 @@ require 'faker'
 end
 users = User.all
 
-10.times do
-  Item.create!(
-    name: Faker::StarWars.character,
-    created_at: Faker::Date.backward(6)
-  )
-end
-items = Item.all
+# 10.times do
+#   Item.create!(
+#     user: user.sample,
+#     name: Faker::StarWars.character,
+#     created_at: Faker::Date.backward(6)
+#   )
+# end
+# items = Item.all
 
 puts "Seeds finished"
 puts "#{User.count} users created"

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'items/create'
 
   resources :users do
-    resources :items, only: [:create]
+    resources :items, only: [:create, :destroy]
   end
 
   root 'users#show'

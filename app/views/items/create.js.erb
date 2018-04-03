@@ -1,0 +1,2 @@
+$('.js-items').append("<%= j render(@item) %>");
+$('.new-item').html("<%= j render partial: 'items/form', locals: { item: @new_item } %>");

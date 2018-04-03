@@ -3,6 +3,8 @@
     <div class="media-body">
       <h4 class="media-heading">
         <%= item.name %>
+        <%= link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+
       </h4>
       <!-- <small>
            submitted on <%= (item.created_at) %> <br>
