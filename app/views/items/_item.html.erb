@@ -2,13 +2,11 @@
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-        <%= item.name %>
+        <%= item.name %> (created <%= time_ago_in_words(item.created_at) %> ago)
         <%= link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
-
+        <small>(<%= item.days_left %> days left)</small>
       </h4>
-      <!-- <small>
-           submitted on <%= (item.created_at) %> <br>
-      </small> -->
+
     </div>
   </div>
 <% end %>
