@@ -1,1 +1,13 @@
-$('#item-' +<%= @item.id %>).hide();
+// // $('#item-' +<%= @item.id %>).hide();
+// $(document).ready(function(){
+// $('.glyphicon.glyphicon-ok').each(function(){
+//    $(this).on('click touchend', function(){
+//      console.log("Test")
+//      $(this).parent('.media').hide();
+//    })
+// })
+// });
+
+$('.glyphicon.glyphicon-ok').bind('ajax:success', function() {
+        $(this).closest('.media').fadeOut();
+});

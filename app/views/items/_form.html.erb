@@ -1,14 +1,3 @@
-<!-- <div class="col-md-4">
-  <div class="form-group">
-    <%= form_for [@user, @user.items.build], remote: true do |f| %>
-      </br>
-      <%= f.text_field :name, class: 'form-control', placeholder: "Add a To-Do Item" %>
-  </div>
-  <div class="form-group">
-      <%= f.submit "Submit To-Do Item", class: 'btn btn-success' %>
-    <% end %>
-  </div>
-</div> -->
 
 <%= form_for [@user, Item.new], remote: true do |f| %>
   <%= f.text_field :name %>
